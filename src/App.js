@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Products from "./Container/Products";
 
-function App() {
+//  Data
+import Data from "./data/data.json";
+
+const App = () => {
+  const [products, setProducts] = useState(null);
+
+  useEffect(() => {
+    setProducts(Data);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>{products ? <Products data={products} /> : <h1>No Record Found</h1>}</>
   );
-}
+};
 
 export default App;

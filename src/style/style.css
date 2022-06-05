@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    background-color: #efefef;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.search-container h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+}
+.search-container .input-field {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #e3e3e3;
+    padding: 20px 40px;
+}
+.search-container .input-field  input {
+    flex: 1;
+    border: 1px solid #d6d7d7;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.05rem;
+    text-transform: lowercase;
+}
+
+
+/* ---------------- item style ---------------- */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    margin: 25px auto 0;
+}
+.products-container .single-item {
+    background-color: #fff;
+    border-radius: 5px;
+    flex: 1;
+    margin: 10px;
+    padding: 15px 10px;
+    position: relative;
+    transition: all .4s;
+    z-index: 1;
+}
+.products-container .single-item .wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000001f;
+    z-index: 2;
+    display: none;
+}
+.products-container .single-item .item-detail {
+    /* flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+.products-container .single-item .wrapper .d-flex {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.products-container .single-item .wrapper .d-flex .favorite {
+    flex: 1.5;
+    padding: 15px;
+}
+.products-container .single-item .wrapper .d-flex .favorite .heart-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.products-container .single-item .wrapper .d-flex .btn-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.products-container .single-item .wrapper .d-flex .btn-container button {
+    border: 1px solid #d6d7d7;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 0 10px;
+    width: 135px;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s;
+}
+.products-container .single-item .wrapper .d-flex .btn-container button .text {
+}
+.products-container .single-item .wrapper .d-flex .btn-container button svg {
+    display: none;
+    font-size: 1.4rem !important;
+}
+.products-container .single-item .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.products-container .single-item .img img {
+    object-fit: contain;
+    width: 280px;
+    height: 280px;
+}
+.products-container .single-item .price-and-details {
+    font-family: 'Poppins', sans-serif;
+    padding: 0 10px;
+}
+.products-container .single-item .price-and-details h2 {
+    font-size: 1.2rem;
+    margin: 20px 0 10px;
+}
+.products-container .single-item .price-and-details h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+.products-container .single-item .price-and-details h5 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #ffc222;
+}
+
+
+/*--------------- hover and focus ---------------*/
+
+.products-container .single-item:hover .wrapper {
+    display: block;
+}
+.products-container .single-item .wrapper .d-flex .btn-container button:hover {
+    background-color: #888;
+    border-color: #888;
+    color: #fff;
+}
+.products-container .single-item .wrapper .d-flex .btn-container button:hover .text {
+    display: none;
+}
+.products-container .single-item .wrapper .d-flex .btn-container button:hover svg {
+    display: block;
+}
+.search-container .input-field  input:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+
+@media screen and (max-width: 576px) {
+    .search-container .input-field {
+        width: 65%;
+        padding: 20px !important;
+    }
+    .products-container {
+        width: 95%;
+    }
+    .search-container h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .search-container .input-field {
+        width: 75%;
+    }
+}
